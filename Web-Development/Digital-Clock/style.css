@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #111;
+
+  font-family: Arial, sans-serif;
+
+  transition: 0.5s;
+}
+
+/* CLOCK BODY */
+
+.clock-body {
+  width: 600px;
+
+  padding: 35px;
+
+  background: #222;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+
+  border: 3px solid #333;
+}
+
+/* CLOCK SCREEN */
+
+.clock-screen {
+  position: relative;
+
+  padding: 40px 25px;
+
+  background: #050505;
+
+  border-radius: 15px;
+
+  border: 5px solid #111;
+
+  box-shadow: inset 0 0 30px rgba(255, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+/* DIGITAL TIME */
+
+.time {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 80px;
+
+  font-weight: bold;
+
+  letter-spacing: 5px;
+
+  color: #ff3131;
+
+  text-shadow:
+    0 0 5px #ff3131,
+    0 0 15px #ff3131,
+    0 0 30px #ff3131;
+}
+
+/* COLON */
+
+.colon {
+  margin: 0 5px;
+
+  animation: blink 1s infinite;
+}
+
+/* AM PM */
+
+#ampm {
+  margin-top: 10px;
+
+  font-size: 22px;
+
+  font-family: "Courier New", monospace;
+
+  font-weight: bold;
+
+  color: #ff3131;
+
+  text-shadow:
+    0 0 5px #ff3131,
+    0 0 15px #ff3131;
+}
+
+/* DATE */
+
+#date {
+  margin-top: 20px;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 18px;
+
+  color: #ff3131;
+
+  text-shadow:
+    0 0 5px #ff3131,
+    0 0 10px #ff3131;
+}
+
+/* BUTTONS */
+
+.buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+button {
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #333;
+
+  color: white;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #444;
+
+  transform: translateY(-2px);
+}
+
+/* COLON BLINK */
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* LIGHT MODE */
+
+body.light {
+  background: #ddd;
+}
+
+body.light .clock-body {
+  background: #eee;
+
+  border-color: #ccc;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+body.light .clock-screen {
+  background: #222;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .clock-body {
+    width: 90%;
+
+    padding: 20px;
+  }
+
+  .time {
+    font-size: 45px;
+
+    letter-spacing: 2px;
+  }
+
+  #date {
+    font-size: 13px;
+  }
+}
